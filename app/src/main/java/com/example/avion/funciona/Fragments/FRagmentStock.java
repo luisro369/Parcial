@@ -1,16 +1,22 @@
 package com.example.avion.funciona.Fragments;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.AlertDialogLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.avion.funciona.Activities.AddItemStock;
 import com.example.avion.funciona.Adapters.StockAdapter;
@@ -23,6 +29,7 @@ public class FRagmentStock extends Fragment {
     //------------------variables--------------
     RecyclerView recicler;
     ArrayList<Item> item_list = new ArrayList<Item>();
+
 
     //------------------variables--------------
     public FRagmentStock() {
@@ -47,6 +54,7 @@ public class FRagmentStock extends Fragment {
 
         recicler = (RecyclerView) view.findViewById(R.id.recycler_stock);
         recicler.setLayoutManager(new LinearLayoutManager(getContext()));
+
         llenarLista();
         StockAdapter stockAdapter = new StockAdapter(item_list);
         recicler.setAdapter(stockAdapter);
@@ -55,24 +63,65 @@ public class FRagmentStock extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent stock_intent = new Intent(getContext(), AddItemStock.class);
-                startActivity(stock_intent);
+                /*Intent stock_intent = new Intent(getContext(), AddItemStock.class);
+                startActivity(stock_intent);*/
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+                View mView = getLayoutInflater().inflate(R.layout.add_item_alert, null);
+                final EditText addName = (EditText) mView.findViewById(R.id.addName);
+                final EditText addQty = (EditText) mView.findViewById(R.id.addQty);
+                final EditText addPrice = (EditText) mView.findViewById(R.id.addPrice);
+                final EditText addCost = (EditText) mView.findViewById(R.id.addCost);
+                final Button buttonCancel = (Button) mView.findViewById(R.id.buttonCancel);
+                final Button buttonAdd = (Button) mView.findViewById(R.id.buttonAdd);
+
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
+                dialog.show();
+
+
+                buttonCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.cancel();
+                    }
+                });
+
+                buttonAdd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (!addName.getText().toString().isEmpty() && !addQty.getText().toString().isEmpty()
+                                && !addPrice.getText().toString().isEmpty() && !addCost.getText().toString().isEmpty()){
+
+
+                            Toast.makeText(getContext(), "Item added to stock", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+                        else {
+                            Toast.makeText(getContext(), "Do not leave any empty field", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+
             }
         });
+
 
 
         return view;
     }
 
-    private void llenarLista(){
+    public void llenarLista(){
         item_list.add(new Item("I0001", "Chikorita", "1", "$99.99", "$50.00", R.drawable.chikorita));
         item_list.add(new Item("I0002", "ONI", "3", "$14.50","$7.75", R.drawable.oni));
         item_list.add(new Item("I0003", "Mastur Ch33f", "10", "$0.99", "$0.25", R.drawable.uni));
         item_list.add(new Item("I0001", "Chikorita", "1", "$99.99", "50.00", R.drawable.chikorita));
         item_list.add(new Item("I0002", "ONI", "3", "$14.50","$7.75", R.drawable.oni));
         item_list.add(new Item("I0003", "Mastur Ch33f", "10", "$0.99", "$0.25", R.drawable.uni));
-
+        item_list.add(new Item("I0004", "prueba", "10","5.00", "2.00", R.drawable.mint));
     }
+
+
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
