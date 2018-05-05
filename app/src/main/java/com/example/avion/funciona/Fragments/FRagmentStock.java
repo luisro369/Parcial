@@ -1,8 +1,10 @@
 package com.example.avion.funciona.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.avion.funciona.Activities.AddItemStock;
 import com.example.avion.funciona.Adapters.StockAdapter;
 import com.example.avion.funciona.Entities.Item;
 import com.example.avion.funciona.R;
@@ -47,6 +50,16 @@ public class FRagmentStock extends Fragment {
         llenarLista();
         StockAdapter stockAdapter = new StockAdapter(item_list);
         recicler.setAdapter(stockAdapter);
+
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent stock_intent = new Intent(getContext(), AddItemStock.class);
+                startActivity(stock_intent);
+            }
+        });
+
 
         return view;
     }

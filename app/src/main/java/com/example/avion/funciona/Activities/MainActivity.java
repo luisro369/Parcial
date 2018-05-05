@@ -3,6 +3,7 @@ package com.example.avion.funciona.Activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,11 +22,11 @@ import com.example.avion.funciona.R;
 public class MainActivity extends AppCompatActivity implements Menus.OnFragmentInteractionListener,Selects.OnFragmentInteractionListener,
 View.OnClickListener,FRagmentStock.OnFragmentInteractionListener{
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //-------------------------------------
         //declarando los linearlayouts y diciendoles que al dar click se vayan al metodo onClick
         LinearLayout summary = (LinearLayout) findViewById(R.id.summary_portrait);
@@ -129,5 +130,15 @@ View.OnClickListener,FRagmentStock.OnFragmentInteractionListener{
                 }
         }//switch
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }

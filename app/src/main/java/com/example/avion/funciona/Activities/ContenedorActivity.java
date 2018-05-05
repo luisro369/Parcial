@@ -28,6 +28,7 @@ public class ContenedorActivity extends AppCompatActivity implements Menus.OnFra
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contenedor);
+
         //===============================elegir que fragment meter en los lugares correspondientes============
         Bundle boton = getIntent().getExtras();
         FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
@@ -65,4 +66,15 @@ public class ContenedorActivity extends AppCompatActivity implements Menus.OnFra
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
 }
