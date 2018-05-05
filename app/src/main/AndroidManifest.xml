@@ -20,8 +20,10 @@
         </activity>
         <activity
             android:name=".Activities.ContenedorActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
-        <activity android:name=".Activities.AddItemStock"></activity>
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:parentActivityName=".Activities.MainActivity"></activity>
+        <activity android:name=".Activities.AddItemStock"
+            android:parentActivityName=".Activities.ContenedorActivity"></activity>
     </application>
 
 </manifest>
