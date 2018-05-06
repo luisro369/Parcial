@@ -12,7 +12,6 @@ import com.example.avion.funciona.R;
 import java.util.ArrayList;
 
 public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
-public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
 
     ArrayList<Account> accounts_list;
 
@@ -36,8 +35,6 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
         holder.account_initial.setText(accounts_list.get(position).getInitial());
         holder.account_in.setText(accounts_list.get(position).getMoneyin());
         holder.account_off.setText(accounts_list.get(position).getMoneyoff());
-
-
     }
 
     @Override

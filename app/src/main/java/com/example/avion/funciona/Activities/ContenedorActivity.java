@@ -22,7 +22,14 @@ import com.example.avion.funciona.R;
 
 import java.util.ArrayList;
 
-public class ContenedorActivity extends AppCompatActivity implements Menus.OnFragmentInteractionListener,Selects.OnFragmentInteractionListener{
+public class ContenedorActivity extends AppCompatActivity implements Menus.OnFragmentInteractionListener,
+        Selects.OnFragmentInteractionListener,
+        FRagmentStock.OnFragmentInteractionListener,
+        FragmentSummary.OnFragmentInteractionListener,
+        FragmentAccounts.OnFragmentInteractionListener,
+        FragmentExpenses.OnFragmentInteractionListener,
+        FragmentIncomes.OnFragmentInteractionListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

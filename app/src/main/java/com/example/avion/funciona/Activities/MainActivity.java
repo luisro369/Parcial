@@ -19,8 +19,15 @@ import com.example.avion.funciona.Fragments.Menus;
 import com.example.avion.funciona.Fragments.Selects;
 import com.example.avion.funciona.R;
 
-public class MainActivity extends AppCompatActivity implements Menus.OnFragmentInteractionListener,Selects.OnFragmentInteractionListener,
-View.OnClickListener,FRagmentStock.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,
+        Menus.OnFragmentInteractionListener,
+        Selects.OnFragmentInteractionListener,
+        FRagmentStock.OnFragmentInteractionListener,
+        FragmentSummary.OnFragmentInteractionListener,
+        FragmentAccounts.OnFragmentInteractionListener,
+        FragmentExpenses.OnFragmentInteractionListener,
+        FragmentIncomes.OnFragmentInteractionListener
+{
 
 
     @Override
