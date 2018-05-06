@@ -12,7 +12,7 @@ import com.example.avion.funciona.R;
 
 import java.util.ArrayList;
 
-public class AccountAdapter {
+public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
     ArrayList<Account> accounts_list;
 
     public AccountAdapter(ArrayList<Account>accounts_list){this.accounts_list= accounts_list;}

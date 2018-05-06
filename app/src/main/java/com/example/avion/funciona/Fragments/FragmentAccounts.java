@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.avion.funciona.Activities.AddAccount;
+import com.example.avion.funciona.Adapters.AccountAdapter;
 import com.example.avion.funciona.R;
 
 import java.util.ArrayList;
