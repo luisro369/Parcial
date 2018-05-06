@@ -31,21 +31,23 @@ public class FragmentAccounts extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_accounts, container, false);
-        //return inflater.inflate(R.layout.fragment_accounts, container, false);
 
+        //return inflater.inflate(R.layout.fragment_accounts, container, false);
+        View view = inflater.inflate(R.layout.fragment_accounts, container, false);
         recyclerView= (RecyclerView)view.findViewById(R.id.recycler_accounts);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fillList();
 
-        AccountAdapter accountAdapter = new AccountAdapter(accounts_list);
-        recyclerView.setAdapter(accountAdapter);
+       // AccountAdapter accountAdapter = new AccountAdapter(getActivity(), accounts_list);
+        //recyclerView.setAdapter(accountAdapter);
+
 
         FloatingActionButton fab2 = (FloatingActionButton)view.findViewById(R.id.floatingActionButtonAc);
         fab2.setOnClickListener(new View.OnClickListener() {
@@ -60,10 +62,11 @@ public class FragmentAccounts extends Fragment {
     }
 
     private void fillList(){
-        accounts_list.add(new Account("Cuenta 1", 20.0, 5.0, 8.5 ));
-        accounts_list.add(new Account("Cuenta 2", 50.0, 45.0, 12.5 ));
-        accounts_list.add(new Account("Cuenta 3", 200.0, 50.0, 8.3 ));
-        accounts_list.add(new Account("Cuenta 4", 70.0, 25.0, 18.5 ));
+       // accounts_list.add(new Account("Cuenta 1", "200", "50", "85"));
+       // accounts_list.add(new Account("Cuenta 2", "50.0", "45.0", "12.5" ));
+       // accounts_list.add(new Account("Cuenta 3", "200.0", "50.0", "8.3" ));
+       // accounts_list.add(new Account("Cuenta 4", "70.0", "25.0", "18.5 "));
+
 
 
     }

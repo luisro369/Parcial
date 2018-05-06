@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.avion.funciona.Entities.Account;
 import com.example.avion.funciona.R;
@@ -13,15 +12,20 @@ import com.example.avion.funciona.R;
 import java.util.ArrayList;
 
 public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
+public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
+
     ArrayList<Account> accounts_list;
 
-    public AccountAdapter(ArrayList<Account>accounts_list){this.accounts_list= accounts_list;}
+    //public AccountAdapter(ArrayList<Account> accounts_list){this.accounts_list= accounts_list;}
+
+    public AccountAdapter(ArrayList<Account> accounts_list) { this.accounts_list= accounts_list;
+    }
 
     @NonNull
     @Override
     public AccountViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_account, parent, false);
-        return new AccountViewHolder(view);
+        View account_view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_account, parent, false);
+        return new AccountViewHolder(account_view);
     }
 
 
@@ -37,7 +41,9 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
     }
 
     @Override
-    public int getItemCount(){return accounts_list.size();}
+    public int getItemCount() {
+        return accounts_list.size();
+    }
 
 
 }
