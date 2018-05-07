@@ -39,6 +39,8 @@ public class FRagmentStock extends Fragment {
     Button buttonCancel;
     Button buttonAdd;
     ImageView addImg;
+    Fragment fragment = this;
+    private final int SELECT_PICTURE = 1234;
 
 
     //------------------variables--------------
@@ -120,7 +122,6 @@ public class FRagmentStock extends Fragment {
         });
 
 
-
         return view;
     }
 
@@ -151,7 +152,7 @@ public class FRagmentStock extends Fragment {
 
         Intent i  = new  Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         i.setType("image/");
-        startActivityForResult(i.createChooser(i,"seleciones la aplicacion"),10);
+        fragment.startActivityForResult(i.createChooser(i,"Open with"), SELECT_PICTURE);
 
     }
 
@@ -161,11 +162,11 @@ public class FRagmentStock extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        ima_inventa = getView().findViewById(R.id.img_inventario);
+
 
         if (resultCode== RESULT_OK){
             Uri path = data.getData();
-            ima_inventa.setImageURI(path);
+            addImg.setImageURI(path);
         }
     }
 
