@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 
 import com.example.avion.funciona.Activities.AddAccount;
 import com.example.avion.funciona.Adapters.AccountAdapter;
+import com.example.avion.funciona.Entities.Accounts;
 import com.example.avion.funciona.R;
 
 import java.util.ArrayList;
@@ -22,16 +24,15 @@ import java.util.ArrayList;
 public class FragmentAccounts extends Fragment {
 
     RecyclerView recyclerView;
-    ArrayList<Account> accounts_list = new ArrayList<Account>();
+    ArrayList<Accounts> accounts_list = new ArrayList<Accounts>();
 
     public FragmentAccounts() {
         // Required empty public constructor
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -44,7 +45,8 @@ public class FragmentAccounts extends Fragment {
         recyclerView= (RecyclerView)view.findViewById(R.id.recycler_accounts);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fillList();
-
+        AccountAdapter accountAdapter = new AccountAdapter(accounts_list);
+        recyclerView.setAdapter(accountAdapter);
        // AccountAdapter accountAdapter = new AccountAdapter(getActivity(), accounts_list);
         //recyclerView.setAdapter(accountAdapter);
 
@@ -62,12 +64,10 @@ public class FragmentAccounts extends Fragment {
     }
 
     private void fillList(){
-       // accounts_list.add(new Account("Cuenta 1", "200", "50", "85"));
-       // accounts_list.add(new Account("Cuenta 2", "50.0", "45.0", "12.5" ));
-       // accounts_list.add(new Account("Cuenta 3", "200.0", "50.0", "8.3" ));
-       // accounts_list.add(new Account("Cuenta 4", "70.0", "25.0", "18.5 "));
-
-
+        accounts_list.add(new Accounts("Cuenta 1", "200", "50", "85"));
+        accounts_list.add(new Accounts("Cuenta 2", "50.0", "45.0", "12.5" ));
+        accounts_list.add(new Accounts("Cuenta 3", "200.0", "50.0", "8.3" ));
+        accounts_list.add(new Accounts("Cuenta 4", "70.0", "25.0", "18.5 "));
 
     }
 

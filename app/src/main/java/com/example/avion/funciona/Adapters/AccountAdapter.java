@@ -1,23 +1,24 @@
 package com.example.avion.funciona.Adapters;
 
+import android.accounts.Account;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.avion.funciona.Entities.Account;
+import com.example.avion.funciona.Entities.Accounts;
 import com.example.avion.funciona.R;
 
 import java.util.ArrayList;
 
 public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
 
-    ArrayList<Account> accounts_list;
+    ArrayList<Accounts> accounts_list;
 
-    //public AccountAdapter(ArrayList<Account> accounts_list){this.accounts_list= accounts_list;}
+    //public AccountAdapter(ArrayList<Accounts> accounts_list){this.accounts_list= accounts_list;}
 
-    public AccountAdapter(ArrayList<Account> accounts_list) { this.accounts_list= accounts_list;
+    public AccountAdapter(ArrayList<Accounts> accounts_list) { this.accounts_list= accounts_list;
     }
 
     @NonNull
@@ -30,11 +31,10 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull AccountViewHolder holder, int position){
-
         holder.account_name.setText(accounts_list.get(position).getName());
         holder.account_initial.setText(accounts_list.get(position).getInitial());
-        holder.account_in.setText(accounts_list.get(position).getMoneyin());
-        holder.account_off.setText(accounts_list.get(position).getMoneyoff());
+        holder.account_in.setText(accounts_list.get(position).getMoneyIn());
+        holder.account_off.setText(accounts_list.get(position).getMoneyOff());
     }
 
     @Override
