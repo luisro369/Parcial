@@ -12,4 +12,6 @@ public class AddItemStock extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item_stock);
     }
+
+
 }

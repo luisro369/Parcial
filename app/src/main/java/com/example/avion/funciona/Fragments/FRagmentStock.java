@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AlertDialogLayout;
@@ -16,19 +17,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.example.avion.funciona.Activities.AddItemStock;
 import com.example.avion.funciona.Adapters.StockAdapter;
 import com.example.avion.funciona.Entities.Item;
 import com.example.avion.funciona.R;
-
 import java.util.ArrayList;
+
+import static android.app.Activity.RESULT_OK;
+
 
 public class FRagmentStock extends Fragment {
     //------------------variables--------------
     RecyclerView recicler;
     ArrayList<Item> item_list = new ArrayList<Item>();
+    EditText addName ;
+    EditText addQty;
+    EditText addPrice;
+    EditText addCost;
+    Button buttonCancel;
+    Button buttonAdd;
+    ImageView addImg;
 
 
     //------------------variables--------------
@@ -39,8 +49,6 @@ public class FRagmentStock extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
     }
 
@@ -63,8 +71,7 @@ public class FRagmentStock extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent stock_intent = new Intent(getContext(), AddItemStock.class);
-                startActivity(stock_intent);*/
+
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
                 View mView = getLayoutInflater().inflate(R.layout.add_item_alert, null);
                 final EditText addName = (EditText) mView.findViewById(R.id.addName);
@@ -73,6 +80,8 @@ public class FRagmentStock extends Fragment {
                 final EditText addCost = (EditText) mView.findViewById(R.id.addCost);
                 final Button buttonCancel = (Button) mView.findViewById(R.id.buttonCancel);
                 final Button buttonAdd = (Button) mView.findViewById(R.id.buttonAdd);
+                final ImageView addImg = (ImageView) mView.findViewById(R.id.img_inventario) ;
+
 
                 mBuilder.setView(mView);
                 final AlertDialog dialog = mBuilder.create();
@@ -101,8 +110,12 @@ public class FRagmentStock extends Fragment {
                         }
                     }
                 });
-
-
+             addImg.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View view) {
+                     cargarImagen();
+                 }
+             });
             }
         });
 
@@ -127,4 +140,33 @@ public class FRagmentStock extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    //-===================peneloco===========================================================
+    ImageView ima_inventa;
+
+
+
+
+    private void cargarImagen() {
+
+        Intent i  = new  Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        i.setType("image/");
+        startActivityForResult(i.createChooser(i,"seleciones la aplicacion"),10);
+
+    }
+
+
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        ima_inventa = getView().findViewById(R.id.img_inventario);
+
+        if (resultCode== RESULT_OK){
+            Uri path = data.getData();
+            ima_inventa.setImageURI(path);
+        }
+    }
+
 }
