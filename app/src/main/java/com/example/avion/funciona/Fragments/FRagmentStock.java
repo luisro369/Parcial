@@ -142,7 +142,7 @@ public class FRagmentStock extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    //-===================peneloco===========================================================
+    //-===================imagen===========================================================
     ImageView ima_inventa;
 
 
