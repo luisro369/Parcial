@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/darker_gray"
+    tools:context=".Activities.AddAccount">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="136dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/logo" />
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="232dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Account Name"
+                android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Initial Amount"
+            android:inputType="numberDecimal" />
+
+
+        <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Add"
+        android:layout_gravity="right"
+        android:background="@color/colorSecondaryLight"
+        android:padding="8dp"/>
+
+
+
+
+        </LinearLayout>
+
+
+</LinearLayout>
