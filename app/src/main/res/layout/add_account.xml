@@ -1,57 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@android:color/darker_gray"
-    tools:context=".Activities.AddAccount">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#fff">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Account"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/colorPrimaryDark"/>
+
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="136dp"
-        android:layout_marginLeft="8dp"
+        android:id="@+id/account_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_margin="20dp"
         android:src="@drawable/logo" />
 
     <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="8dp">
-
-            <EditText
-                android:id="@+id/editText1"
-                android:layout_width="232dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Account Name"
-                android:inputType="textPersonName" />
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSecondaryDark"
+        android:layout_margin="8dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/colorPrimaryLight"
+            android:text="Account Name"
+            android:gravity="center"/>
         <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
+            android:id="@+id/account_nameadd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSecondaryDark"
+        android:layout_margin="8dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/colorPrimaryLight"
+            android:text="Initial Amount"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/account_initialadd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:inputType="number"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/buttonCancel2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
-            android:hint="Initial Amount"
-            android:inputType="numberDecimal" />
-
-
+            android:text="Cancel"
+            android:layout_gravity="center"/>
         <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Add"
-        android:layout_gravity="right"
-        android:background="@color/colorSecondaryLight"
-        android:padding="8dp"/>
+            android:id="@+id/buttonAddAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ADD"
+            android:background="@color/colorAccent"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
 
 
 
-
-        </LinearLayout>
 
 
 </LinearLayout>
