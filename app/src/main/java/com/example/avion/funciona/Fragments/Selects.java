@@ -1,5 +1,6 @@
 package com.example.avion.funciona.Fragments;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -52,6 +53,15 @@ public class Selects extends Fragment {
             }
         });
 
+        addName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+
 
         return mView;
     }
@@ -70,8 +80,6 @@ public class Selects extends Fragment {
             Uri path = data.getData();
             addImg.setImageURI(path);
         }
-        else{
-            Toast.makeText(getContext(), "Que es esta shit", Toast.LENGTH_SHORT).show();
-        }
+
     }
 }
