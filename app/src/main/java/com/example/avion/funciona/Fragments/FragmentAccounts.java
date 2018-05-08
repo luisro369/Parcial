@@ -8,11 +8,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.avion.funciona.Activities.AddAccount;
 import com.example.avion.funciona.Adapters.AccountAdapter;
@@ -51,16 +56,51 @@ public class FragmentAccounts extends Fragment {
         //recyclerView.setAdapter(accountAdapter);
 
 
-        FloatingActionButton fab2 = (FloatingActionButton)view.findViewById(R.id.floatingActionButtonAc);
-        fab2.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent account_intent = new Intent (getContext(), AddAccount.class);
-                startActivity(account_intent);
+            public void onClick(View view) {
+
+                android.app.AlertDialog.Builder mBuilder = new android.app.AlertDialog.Builder(getContext());
+                View mView = getLayoutInflater().inflate(R.layout.add_account, null);
+                final EditText account_nameadd = (EditText) mView.findViewById(R.id.account_nameadd);
+                final EditText account_initialadd = (EditText) mView.findViewById(R.id.account_initialadd);
+                final Button buttonCancel = (Button) mView.findViewById(R.id.buttonCancel2);
+                final Button buttonAdd = (Button) mView.findViewById(R.id.buttonAddAccount);
+                final ImageView imageView = (ImageView) mView.findViewById(R.id.account_image) ;
+
+
+                mBuilder.setView(mView);
+                final android.app.AlertDialog dialog = mBuilder.create();
+                dialog.show();
+
+
+                buttonCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.cancel();
+                    }
+                });
+
+               buttonAdd.setOnClickListener(new View.OnClickListener(){
+                   @Override
+                   public void onClick(View view){
+                       if (!account_nameadd.getText().toString().isEmpty() && !account_initialadd.getText().toString().isEmpty()){
+
+                           Toast.makeText(getContext(), "New Account Added", Toast.LENGTH_SHORT).show();
+                           dialog.dismiss();
+                       }
+                       else{
+                           Toast.makeText(getContext(), "Do not leave any empty field", Toast.LENGTH_SHORT).show();
+                           }
+                   }
+               });
+
             }
         });
 
         return view;
+
     }
 
     private void fillList(){
