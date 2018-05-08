@@ -32,6 +32,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //----si estoy en portrait mandar el fragment al activity2---------
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -121,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     fr.addToBackStack(null);
                     fr.commit();
                     break;
-                }
+                }//else
                 //----------Stocks-----------
             case R.id.stock_portrait:
                 if(findViewById(R.id.layout_default) != null){

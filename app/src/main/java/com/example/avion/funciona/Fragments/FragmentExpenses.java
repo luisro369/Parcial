@@ -3,6 +3,7 @@ package com.example.avion.funciona.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,15 @@ import com.example.avion.funciona.R;
 
 
 public class FragmentExpenses extends Fragment {
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+
+
+    }
+
     public FragmentExpenses() {
         // Required empty public constructor
     }
