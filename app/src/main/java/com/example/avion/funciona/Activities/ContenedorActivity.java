@@ -42,7 +42,7 @@ public class ContenedorActivity extends AppCompatActivity implements Menus.OnFra
 
         if(boton.getInt("summary") == 1){
             fr.replace(R.id.contenedor2, new FragmentSummary());
-            fr.addToBackStack(null);
+            //fr.addToBackStack(null);
             fr.commit();
         }//if summary
         else if(boton.getInt("account") == 2){

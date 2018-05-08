@@ -3,6 +3,7 @@ package com.example.avion.funciona.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +20,15 @@ import java.util.ArrayList;
 
 
 public class FragmentExpenses extends Fragment {
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+
+
+    }
+
     RecyclerView recyclerViewExpenses;
     ArrayList<Expenses> expenses_list = new ArrayList<Expenses>();
     public FragmentExpenses() {

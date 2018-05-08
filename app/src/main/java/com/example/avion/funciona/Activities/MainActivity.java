@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.avion.funciona.Fragments.FRagmentStock;
 import com.example.avion.funciona.Fragments.FragmentAccounts;
@@ -29,6 +30,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FragmentIncomes.OnFragmentInteractionListener
 {
 
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //----si estoy en portrait mandar el fragment al activity2---------
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     fr.addToBackStack(null);
                     fr.commit();
                     break;
-                }
+                }//else
                 //----------Stocks-----------
             case R.id.stock_portrait:
                 if(findViewById(R.id.layout_default) != null){
@@ -147,5 +155,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPause() {
         super.onPause();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(this,"llamada aqui",Toast.LENGTH_SHORT).show();
     }
 }

@@ -39,6 +39,8 @@ public class FRagmentStock extends Fragment {
     Button buttonCancel;
     Button buttonAdd;
     ImageView addImg;
+    Fragment fragment = this;
+    private final int SELECT_PICTURE = 1234;
 
 
     //------------------variables--------------
@@ -74,13 +76,13 @@ public class FRagmentStock extends Fragment {
 
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
                 View mView = getLayoutInflater().inflate(R.layout.add_item_alert, null);
-                final EditText addName = (EditText) mView.findViewById(R.id.addName);
-                final EditText addQty = (EditText) mView.findViewById(R.id.addQty);
-                final EditText addPrice = (EditText) mView.findViewById(R.id.addPrice);
-                final EditText addCost = (EditText) mView.findViewById(R.id.addCost);
-                final Button buttonCancel = (Button) mView.findViewById(R.id.buttonCancel);
-                final Button buttonAdd = (Button) mView.findViewById(R.id.buttonAdd);
-                final ImageView addImg = (ImageView) mView.findViewById(R.id.img_inventario) ;
+                addName = (EditText) mView.findViewById(R.id.addName);
+                addQty = (EditText) mView.findViewById(R.id.addQty);
+                addPrice = (EditText) mView.findViewById(R.id.addPrice);
+                addCost = (EditText) mView.findViewById(R.id.addCost);
+                buttonCancel = (Button) mView.findViewById(R.id.buttonCancel);
+                buttonAdd = (Button) mView.findViewById(R.id.buttonAdd);
+                addImg = (ImageView) mView.findViewById(R.id.img_inventario) ;
 
 
                 mBuilder.setView(mView);
@@ -120,7 +122,6 @@ public class FRagmentStock extends Fragment {
         });
 
 
-
         return view;
     }
 
@@ -141,17 +142,17 @@ public class FRagmentStock extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    //-===================peneloco===========================================================
+    //-===================imagen===========================================================
     ImageView ima_inventa;
 
 
 
 
-    private void cargarImagen() {
+    public void cargarImagen() {
 
         Intent i  = new  Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         i.setType("image/");
-        startActivityForResult(i.createChooser(i,"seleciones la aplicacion"),10);
+        fragment.startActivityForResult(i.createChooser(i,"Open with"), SELECT_PICTURE);
 
     }
 
@@ -161,11 +162,11 @@ public class FRagmentStock extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        ima_inventa = getView().findViewById(R.id.img_inventario);
 
-        if (resultCode== RESULT_OK){
+
+        if (resultCode== getActivity().RESULT_OK){
             Uri path = data.getData();
-            ima_inventa.setImageURI(path);
+            addImg.setImageURI(path);
         }
     }
 
