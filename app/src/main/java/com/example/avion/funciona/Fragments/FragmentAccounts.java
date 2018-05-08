@@ -56,7 +56,7 @@ public class FragmentAccounts extends Fragment {
         //recyclerView.setAdapter(accountAdapter);
 
 
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.floatingActionButtonAc);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,10 +104,13 @@ public class FragmentAccounts extends Fragment {
     }
 
     private void fillList(){
-        accounts_list.add(new Accounts("Cuenta 1", "200", "50", "85"));
-        accounts_list.add(new Accounts("Cuenta 2", "50.0", "45.0", "12.5" ));
-        accounts_list.add(new Accounts("Cuenta 3", "200.0", "50.0", "8.3" ));
-        accounts_list.add(new Accounts("Cuenta 4", "70.0", "25.0", "18.5 "));
+        accounts_list.add(new Accounts("Account 1", "200", "$1000.00", "$800.00"));
+        accounts_list.add(new Accounts("Account 2", "50.0", "$200.00", "$250.00" ));
+        accounts_list.add(new Accounts("Account 3", "200.0", "$500.00", "$480.00" ));
+        accounts_list.add(new Accounts("Account 4", "70.0", "$570.00", "$571.00 "));
+        accounts_list.add(new Accounts("Account 5", "70.0", "$405.00", "$403.00 "));
+        accounts_list.add(new Accounts("Account 6", "70.0", "$75.00", "$65.00 "));
+        accounts_list.add(new Accounts("Account 7", "70.0", "$205.00", "$249.50"));
 
     }
 

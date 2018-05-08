@@ -1,51 +1,48 @@
 package com.example.avion.funciona.Entities;
 
-/**
- * Created by luisro on 5/6/18.
- */
 
 public class Summary {
-    String fecha;
-    String estadoCuenta;
-    String ganacia;
-    String gasto;
+    String nameSum;
+    String status;
+    String incomesSum;
+    String expensesSum;
 
-    public Summary(String fecha, String estadoCuenta, String ganacia, String gasto) {
-        this.fecha = fecha;
-        this.estadoCuenta = estadoCuenta;
-        this.ganacia = ganacia;
-        this.gasto = gasto;
+    public Summary(String name, String status, String incomesSum, String expensesSum) {
+        this.nameSum = name;
+        this.status = status;
+        this.incomesSum = incomesSum;
+        this.expensesSum = expensesSum;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getNameSum() {
+        return nameSum;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setNameSum(String nameSum) {
+        this.nameSum = nameSum;
     }
 
-    public String getEstadoCuenta() {
-        return estadoCuenta;
+    public String getEstadoStatus() {
+        return status;
     }
 
-    public void setEstadoCuenta(String estadoCuenta) {
-        this.estadoCuenta = estadoCuenta;
+    public void setEstadoStatus(String status) {
+        this.status = status;
     }
 
-    public String getGanacia() {
-        return ganacia;
+    public String getIncomesSum() {
+        return incomesSum;
     }
 
-    public void setGanacia(String ganacia) {
-        this.ganacia = ganacia;
+    public void setIncomesSum(String incomesSum) {
+        this.incomesSum = incomesSum;
     }
 
-    public String getGasto() {
-        return gasto;
+    public String getExpensesSum() {
+        return expensesSum;
     }
 
-    public void setGasto(String gasto) {
-        this.gasto = gasto;
+    public void setExpensesSum(String expensesSum) {
+        this.expensesSum = expensesSum;
     }
 }

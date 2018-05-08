@@ -29,12 +29,7 @@ public class IncomesAdapter extends RecyclerView.Adapter<IncomesViewHolder> {
         holder.textViewProduct11.setText(incomes_list.get(position).getProduct());
         holder.textViewProduct21.setText(incomes_list.get(position).getProduct());
         holder.textViewProduct31.setText(incomes_list.get(position).getProduct());
-        holder.textViewQuantity11.setText(incomes_list.get(position).getQuantity());
-        holder.textViewQuantity21.setText(incomes_list.get(position).getQuantity());
-        holder.textViewQuantity31.setText(incomes_list.get(position).getQuantity());
-        holder.textViewPrice11.setText(incomes_list.get(position).getPrice());
-        holder.textViewPrice21.setText(incomes_list.get(position).getPrice());
-        holder.textViewPrice31.setText(incomes_list.get(position).getPrice());
+
         holder.textViewSubtotal11.setText(incomes_list.get(position).getSubtotal());
         holder.textViewSubtotal21.setText(incomes_list.get(position).getSubtotal());
         holder.textViewSubtotal31.setText(incomes_list.get(position).getSubtotal());

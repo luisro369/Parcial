@@ -43,13 +43,13 @@ public class FragmentIncomes extends Fragment {
     }
 
     private void fillList1(){
-        incomes_list.add(new Incomes("Account 1", "123", "1", "2", "21", "15", "45"));
-        incomes_list.add(new Incomes("Account 2", "123", "1", "2", "21", "15", "45"));
-        incomes_list.add(new Incomes("Account 3", "123", "1", "2", "21", "15", "45"));
-        incomes_list.add(new Incomes("Account 4", "123", "1", "2", "21", "15", "45"));
-        incomes_list.add(new Incomes("Account 5", "123", "1", "2", "21", "15", "45"));
-        incomes_list.add(new Incomes("Account 6", "123", "1", "2", "21", "15", "45"));
-        incomes_list.add(new Incomes("Account 7", "123", "1", "2", "21", "15", "45"));
+        incomes_list.add(new Incomes("Account 1", "123", "1", "2", "21"));
+        incomes_list.add(new Incomes("Account 2", "123", "1", "2", "21"));
+        incomes_list.add(new Incomes("Account 3", "123", "1", "2", "21"));
+        incomes_list.add(new Incomes("Account 4", "123", "1", "2", "21"));
+        incomes_list.add(new Incomes("Account 5", "123", "1", "2", "21"));
+        incomes_list.add(new Incomes("Account 6", "123", "1", "2", "21"));
+        incomes_list.add(new Incomes("Account 7", "123", "1", "2", "21"));
     }
 
     public interface OnFragmentInteractionListener {

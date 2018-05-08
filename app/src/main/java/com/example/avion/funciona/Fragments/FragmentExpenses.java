@@ -23,17 +23,11 @@ public class FragmentExpenses extends Fragment {
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-
-
-    }
+        super.onSaveInstanceState(outState);    }
 
     RecyclerView recyclerViewExpenses;
     ArrayList<Expenses> expenses_list = new ArrayList<Expenses>();
-    public FragmentExpenses() {
-        // Required empty public constructor
-    }
+    public FragmentExpenses() {  }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,10 +51,13 @@ public class FragmentExpenses extends Fragment {
 
 
     private void fillList(){
-        expenses_list.add(new Expenses("Account 1", "233", "343", "weeqw", "34", "233", "2323"));
-        expenses_list.add(new Expenses("Cuenta 2", "50.0", "45.0", "12.5", "78", "45","23" ));
-        expenses_list.add(new Expenses("Cuenta 3", "200.0", "50.0", "8.3", "84", "43", "43" ));
-        expenses_list.add(new Expenses("Cuenta 4", "70.0", "25.0", "18.5 ", "45", "23", "32"));
+        expenses_list.add(new Expenses("Account 1", "$800.00", "Provider 1", "Product 1", "1", "$800.00", "2323"));
+        expenses_list.add(new Expenses("Account 2", "$250.00", "Provider 2", "Product 2", "1", "$250.00","23" ));
+        expenses_list.add(new Expenses("Account 3", "$480.00", "Provider 3", "Product 3", "1", "$480.00", "43" ));
+        expenses_list.add(new Expenses("Account 4", "$571.00", "Provider 4", "Product 4", "1", "$571.00", "32"));
+        expenses_list.add(new Expenses("Account 5", "$403.00", "Provider 5", "Product 5", "1", "$403.00", "32"));
+        expenses_list.add(new Expenses("Account 6", "$65.00", "Provider 6", "Product 6", "1", "$65.00", "32"));
+        expenses_list.add(new Expenses("Account 7", "$249.50", "Provider 7", "Product 7", "1", "$249.50", "32"));
 
     }
 

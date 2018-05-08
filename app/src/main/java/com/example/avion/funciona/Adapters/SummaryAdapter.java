@@ -7,19 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.avion.funciona.Entities.Item;
+import com.example.avion.funciona.Entities.Summary;
 import com.example.avion.funciona.R;
 
 import java.util.ArrayList;
 
-/**
- * Created by luisro on 5/6/18.
- */
 
 public class SummaryAdapter extends RecyclerView.Adapter<SummaryViewHolder> {
 
-    ArrayList<Item> summary_list;
+    ArrayList<Summary> summary_list;
 
-    public SummaryAdapter(ArrayList<Item> summary_list) {
+    public SummaryAdapter(ArrayList<Summary> summary_list) {
         this.summary_list = summary_list;
     }
 
@@ -32,14 +30,11 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull SummaryViewHolder holder, int position) {
-        holder.txt_code.setText(summary_list.get(position).getItem_code());
-        holder.txt_name.setText(summary_list.get(position).getItem_name());
-        holder.txt_qty.setText(summary_list.get(position).getItem_quntity());
-        holder.txt_price.setText(summary_list.get(position).getItem_price());
-        holder.txt_cost.setText(summary_list.get(position).getItem_cost());
-        holder.img_stock.setImageResource(summary_list.get(position).getItem_image());
-
-    }
+        holder.nameSum.setText(summary_list.get(position).getNameSum());
+        holder.status.setText(summary_list.get(position).getEstadoStatus());
+        holder.incomeSum.setText(summary_list.get(position).getIncomesSum());
+        holder.expensesSum.setText(summary_list.get(position).getExpensesSum());
+     }
 
     @Override
     public int getItemCount() {

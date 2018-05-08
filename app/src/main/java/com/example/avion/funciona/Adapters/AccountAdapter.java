@@ -16,7 +16,7 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountViewHolder>{
 
     ArrayList<Accounts> accounts_list;
 
-    //public AccountAdapter(ArrayList<Accounts> accounts_list){this.accounts_list= accounts_list;}
+
 
     public AccountAdapter(ArrayList<Accounts> accounts_list) { this.accounts_list= accounts_list;
     }

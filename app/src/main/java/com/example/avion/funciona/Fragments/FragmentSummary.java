@@ -19,20 +19,16 @@ import com.example.avion.funciona.Activities.AddItemStock;
 import com.example.avion.funciona.Adapters.StockAdapter;
 import com.example.avion.funciona.Adapters.SummaryAdapter;
 import com.example.avion.funciona.Entities.Item;
+import com.example.avion.funciona.Entities.Summary;
 import com.example.avion.funciona.R;
 
 import java.util.ArrayList;
 
 public class FragmentSummary extends Fragment {
-    //------------------variables--------------
-    RecyclerView recicler;
-    ArrayList<Item> summary_list = new ArrayList<Item>();
+    RecyclerView recycler;
+    ArrayList<Summary> summary_list = new ArrayList<Summary>();
 
-    //------------------variables--------------
-
-    public FragmentSummary() {
-        // Required empty public constructor
-    }
+    public FragmentSummary() { }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,27 +38,26 @@ public class FragmentSummary extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //return inflater.inflate(R.layout.fragment_summary, container, false);
-        View view = inflater.inflate(R.layout.fragment_summary, container,false);
-        //=============declarando arrays de cardview===================
 
-        recicler = (RecyclerView) view.findViewById(R.id.recycler_summary);
-        recicler.setLayoutManager(new LinearLayoutManager(getContext()));
-        llenarLista();
+        View view = inflater.inflate(R.layout.fragment_summary, container,false);
+
+        recycler = (RecyclerView) view.findViewById(R.id.recycler_summary);
+        recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        fillList();
         SummaryAdapter summaryAdapter = new SummaryAdapter(summary_list);
-        recicler.setAdapter(summaryAdapter);
+        recycler.setAdapter(summaryAdapter);
 
         return view;
     }
 
-    private void llenarLista(){
-        summary_list.add(new Item("I0001", "Chikorita", "1", "$99.99", "$50.00", R.drawable.chikorita));
-        summary_list.add(new Item("I0002", "ONI", "3", "$14.50","$7.75", R.drawable.oni));
-        summary_list.add(new Item("I0003", "Mastur Ch33f", "10", "$0.99", "$0.25", R.drawable.uni));
-        summary_list.add(new Item("I0001", "Chikorita", "1", "$99.99", "50.00", R.drawable.chikorita));
-        summary_list.add(new Item("I0002", "ONI", "3", "$14.50","$7.75", R.drawable.oni));
-        summary_list.add(new Item("I0003", "Mastur Ch33f", "10", "$0.99", "$0.25", R.drawable.uni));
-
+    private void fillList(){
+        summary_list.add(new Summary("Account 1", "+$200.00", "$1000.00", "$800.00"));
+        summary_list.add(new Summary("Account 2", "-$50.00", "$200.00", "$250.00"));
+        summary_list.add(new Summary("Account 3", "+$20.00", "500.00", "$480.00"));
+        summary_list.add(new Summary("Account 4", "-$1.00", "$570.00", "$571.00"));
+        summary_list.add(new Summary("Account 5", "+$2.00", "$405.00", "$403.00"));
+        summary_list.add(new Summary("Account 6", "+$10.00", "$75.00", "$65.00"));
+        summary_list.add(new Summary("Account 7", "+$0.50", "$205.00", "$249.50"));
     }
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name

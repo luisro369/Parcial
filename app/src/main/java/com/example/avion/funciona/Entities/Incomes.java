@@ -5,18 +5,16 @@ public class Incomes {
     String total;
     String provider;
     String product;
-    String quantity;
-    String price;
     String subtotal;
 
 
-    public Incomes(String name, String total, String provider, String product, String quantity, String price, String subtotal){
+    public Incomes(String name, String total, String provider, String product, String subtotal){
         this.name = name;
         this.total = total;
         this.provider = provider;
         this.product = product;
-        this.quantity = quantity;
-        this.price = price;
+
+
         this.subtotal = subtotal;
     }
 
@@ -42,16 +40,6 @@ public class Incomes {
     public String getProduct() { return product; }
 
     public void setProduct(String product) { this.product = product; }
-
-
-    public String getQuantity() { return quantity; }
-
-    public void setQuantity(String quantity) { this.quantity = quantity; }
-
-
-    public String getPrice() {  return price; }
-
-    public void setPrice(String price) { this.price = price; }
 
 
     public String getSubtotal() { return subtotal; }
