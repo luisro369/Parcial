@@ -126,6 +126,8 @@
                 android:layout_toRightOf="@id/cost"
                 />
 
+
+
         </RelativeLayout>
     </LinearLayout>
 
