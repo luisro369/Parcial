@@ -76,13 +76,13 @@ public class FRagmentStock extends Fragment {
 
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
                 View mView = getLayoutInflater().inflate(R.layout.add_item_alert, null);
-                final EditText addName = (EditText) mView.findViewById(R.id.addName);
-                final EditText addQty = (EditText) mView.findViewById(R.id.addQty);
-                final EditText addPrice = (EditText) mView.findViewById(R.id.addPrice);
-                final EditText addCost = (EditText) mView.findViewById(R.id.addCost);
-                final Button buttonCancel = (Button) mView.findViewById(R.id.buttonCancel);
-                final Button buttonAdd = (Button) mView.findViewById(R.id.buttonAdd);
-                final ImageView addImg = (ImageView) mView.findViewById(R.id.img_inventario) ;
+                addName = (EditText) mView.findViewById(R.id.addName);
+                addQty = (EditText) mView.findViewById(R.id.addQty);
+                addPrice = (EditText) mView.findViewById(R.id.addPrice);
+                addCost = (EditText) mView.findViewById(R.id.addCost);
+                buttonCancel = (Button) mView.findViewById(R.id.buttonCancel);
+                buttonAdd = (Button) mView.findViewById(R.id.buttonAdd);
+                addImg = (ImageView) mView.findViewById(R.id.img_inventario) ;
 
 
                 mBuilder.setView(mView);
@@ -148,7 +148,7 @@ public class FRagmentStock extends Fragment {
 
 
 
-    private void cargarImagen() {
+    public void cargarImagen() {
 
         Intent i  = new  Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         i.setType("image/");
@@ -164,7 +164,7 @@ public class FRagmentStock extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
 
-        if (resultCode== RESULT_OK){
+        if (resultCode== getActivity().RESULT_OK){
             Uri path = data.getData();
             addImg.setImageURI(path);
         }
