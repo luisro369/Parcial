@@ -61,7 +61,12 @@ public class FRagmentStock extends Fragment {
         recicler.setLayoutManager(new LinearLayoutManager(getContext()));
 
         llenarLista();
-        StockAdapter stockAdapter = new StockAdapter(item_list);
+        StockAdapter stockAdapter = new StockAdapter(item_list) {
+            @Override
+            public void OnVerClick(View v, int pos) {
+                
+            }
+        };
         recicler.setAdapter(stockAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
