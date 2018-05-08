@@ -26,8 +26,6 @@
             android:name=".Activities.ContenedorActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:parentActivityName=".Activities.MainActivity"></activity>
-        <activity android:name=".Activities.AddItemStock"
-            android:parentActivityName=".Activities.ContenedorActivity"></activity>
 
         <activity android:name=".Activities.AddAccount" android:parentActivityName=".Activities.ContenedorActivity"></activity>
     </application>

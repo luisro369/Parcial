@@ -160,6 +160,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this,"llamada aqui",Toast.LENGTH_SHORT).show();
     }
 }

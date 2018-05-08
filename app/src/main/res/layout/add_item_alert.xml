@@ -10,12 +10,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Add new item"
+            android:text="@string/add_new_item"
             android:gravity="center"
             android:textSize="20sp"
             android:background="@color/colorPrimaryDark"/>
@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryLight"
-                android:text="Item name"
+                android:text="@string/add_stock_name"
                 android:gravity="center"/>
             <EditText
                 android:id="@+id/addName"
@@ -57,7 +57,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryLight"
-                android:text="Quantity"
+                android:text="@string/quantity"
                 android:gravity="center"/>
             <EditText
                 android:id="@+id/addQty"
@@ -76,7 +76,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryLight"
-                android:text="Price"
+                android:text="@string/price"
                 android:gravity="center"/>
 
             <EditText
@@ -96,7 +96,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryLight"
-                android:text="Cost"
+                android:text="@string/cost"
                 android:gravity="center"/>
             <EditText
                 android:id="@+id/addCost"
@@ -113,14 +113,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cancel"
+                android:text="@string/cancel_btn"
                 android:layout_gravity="center"/>
             <Button
                 android:id="@+id/buttonAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="ADD"
+                android:text="@string/add_btn"
                 android:background="@color/colorAccent"
                 android:layout_margin="8dp"/>
         </LinearLayout>
