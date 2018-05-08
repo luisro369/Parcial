@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
     android:background="@color/colorPrimaryLight">
 
     <LinearLayout
@@ -34,7 +35,7 @@
                 android:id="@+id/account_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Account Name"
+                android:hint="@string/add_account_name"
                 android:background="@color/colorSecondary"
                 android:padding="2dp"
                 android:textStyle="bold"/>
@@ -43,7 +44,7 @@
                     android:id="@+id/account_initial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Initial Amount"
+                    android:hint="@string/account_init_amount"
                     android:padding="12dp"
                     android:textColor="@color/colorPrimaryDark"
                     tools:text="Initial Amount" />
@@ -58,7 +59,7 @@
 
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="Money In"
+                 android:text="@string/money_in"
                  android:padding="14dp"
                  android:textColor="@color/colorPrimaryDark"/>
 
@@ -67,7 +68,7 @@
 
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="Money Off"
+                 android:text="@string/money_off"
                  android:padding="14dp"
                  android:textColor="@color/colorPrimaryDark"/>
 
@@ -97,22 +98,12 @@
 
           </LinearLayout>
 
-
+        </LinearLayout>
 
 
         </LinearLayout>
 
 
-
-
-
-
-
-
-    </LinearLayout>
-
-
-
-
-
 </LinearLayout>
+
+
