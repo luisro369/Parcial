@@ -1,17 +1,14 @@
 package com.example.avion.funciona.Fragments;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.AlertDialogLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,13 +16,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-import com.example.avion.funciona.Activities.AddItemStock;
+
 import com.example.avion.funciona.Adapters.StockAdapter;
 import com.example.avion.funciona.Entities.Item;
 import com.example.avion.funciona.R;
 import java.util.ArrayList;
-
-import static android.app.Activity.RESULT_OK;
 
 
 public class FRagmentStock extends Fragment {

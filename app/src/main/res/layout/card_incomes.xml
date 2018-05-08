@@ -16,7 +16,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="INCOMES"
+            android:text="@string/incomes_text"
+            android:textAllCaps="true"
             android:textStyle="bold"
             android:textSize="24sp"
             android:background="@color/colorAccent" />
@@ -27,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Account  # "
+            android:text="@string/account_number"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -52,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="0"
-            android:text="Quantity"
+            android:text="@string/quantity"
             android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
@@ -61,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="0"
-            android:text="Product"
+            android:text="@string/product"
             android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
@@ -70,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_column="2"
             android:layout_row="0"
-            android:text="Price"
+            android:text="@string/price"
             android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
@@ -79,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_column="3"
             android:layout_row="0"
-            android:text="Subtotal"
+            android:text="@string/subtotal"
             android:textColor="@color/colorPrimaryDark"/>
 
         <TextView

@@ -7,5 +7,25 @@
     <string name="incomes_text">Ingresos</string>
     <string name="expenses_text">Gastos</string>
     <string name="stock">Inventario</string>
-    <string name="title_activity_summary">Summary</string>
+    <string name="title_activity_main2">Administración</string>
+    <string name="title_activity_stock">Inventario</string>
+    <string name="add_account">Añadir nueva cuenta</string>
+    <string name="add_account_name">Nombre cuenta</string>
+    <string name="account_init_amount">Monto inicial</string>
+    <string name="cancel_btn">Cancelar</string>
+    <string name="add_btn">Añadir</string>
+    <string name="add_new_item">Nuevo Producto</string>
+    <string name="add_stock_name">Nombre producto</string>
+    <string name="quantity">Cantidad</string>
+    <string name="price">Precio</string>
+    <string name="cost">Costo</string>
+    <string name="money_in">Ganancia</string>
+    <string name="money_off">Pérdida</string>
+    <string name="account_number">Cuenta #</string>
+    <string name="product">Producto</string>
+    <string name="subtotal">Subtototal</string>
+    <string name="code">Código</string>
+    <string name="total">Total</string>
+    <string name="date">Fecha</string>
+
 </resources>
