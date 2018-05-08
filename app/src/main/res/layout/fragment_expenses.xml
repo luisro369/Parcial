@@ -1,38 +1,14 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.avion.funciona.Fragments.FragmentExpenses"
-    android:id="@+id/fragmentExpenses">
+    android:id="@+id/fragmentExpenses"
+    android:background="@color/colorPrimaryDark">
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        >
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_expenses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:id="@+id/linearpadre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/colorPrimaryLight"
-            >
-
-
-            <TextView
-                android:background="@color/colorAccent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="EXPENSESSSSSSSSSSS"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:textColor="@color/colorPrimary"
-                />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-</FrameLayout>
+</android.support.design.widget.CoordinatorLayout>
