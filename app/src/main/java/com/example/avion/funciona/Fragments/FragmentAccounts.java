@@ -56,7 +56,7 @@ public class FragmentAccounts extends Fragment {
         //recyclerView.setAdapter(accountAdapter);
 
 
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.floatingActionButtonAc);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
